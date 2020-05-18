@@ -20,6 +20,11 @@ class TabsContainer extends Component {
     };
   }
 
+  componentDidUpdate(prevProps) {
+    console.log('update');
+    console.log(prevProps.tabs === this.props.tabs);
+  }
+
   shouldHideTabBar = () => {
     const currentTab = this.props.tabs[this.props.activeTabIndex];
     const activeRoute = this.activeRoutes[this.props.activeTabIndex];
