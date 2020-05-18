@@ -20,11 +20,6 @@ class TabsContainer extends Component {
     };
   }
 
-  componentDidUpdate(prevProps) {
-    console.log('update');
-    console.log(prevProps.tabs === this.props.tabs);
-  }
-
   shouldHideTabBar = () => {
     const currentTab = this.props.tabs[this.props.activeTabIndex];
     const activeRoute = this.activeRoutes[this.props.activeTabIndex];
@@ -66,7 +61,6 @@ class TabsContainer extends Component {
         onChangeTab={this.handleTabChanged}
         initialPage={this.initialTab}
         renderTabBar={this.renderTabBar}
-        page={this.props.activeTabIndex}
       >
         {
           tabs.map((tab, index) => {
